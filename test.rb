@@ -1,118 +1,83 @@
+#OOP Language -> everything is an object
 
-=begin
-def get_day_name(day_abreviation)
-    day_name = ""
-    case day_abreviation
-    when "mon"
-        day_name = "Monday"
-    when "tue"
-        day_name = "Tuesday"
-    when "wed"
-        day_name = "Wednesday"
-    when "thu"
-        day_name = "Thursday"
-    when "fri"
-        day_name = "Friday"
-    when "sat"
-        day_name = "Saturday"
-    when "sunday"
-        day_name = "Sunday"
-    else
-        day_name = "Invalid Abreviation"
-    end
+#Data types 
 
+#numbers(integers and floats)
 
-    return day_name
-end
+#math operators
+1 + 1
+2 - 1
+3 - 1
+3 * 2 
+3 ** 2 #exponent
+8 % 10 #modulus - the remainder of division
 
-puts get_day_name("mon")
+#converting number types
 
-def while_loop 
-number = 9
-    while number <= 20
-        puts number
-        number += 1
-    end
-end
-puts while_loop
+17.to_f #convert to float
+17.0.to_i #convert to integer
 
-def guessing_game 
-    secret_word = "secret"
-    guess = ""
-    guess_count = 0
-    guess_limit = 3
-    out_of_guesses = false
+#Strings
 
-    while guess != secret_word and !out_of_guesses
-        if guess_count < guess_limit
-            puts "Enter your guess: "
-            guess = gets.chomp()
-            guess_count +=1
-        else
-            out_of_guesses = true
-        end
-    end
+"Luca"
+"Hey"
+"Salve"
 
-        if out_of_guesses 
-            puts "You lose"
-        else
-            puts "You won bro :P"
-        end
+#concatenation
 
-end
+puts "Wake me up when " + " september ends"
+puts "Wake me up when" << " september ends"
 
-puts guessing_game
+#interpolation
 
+name = "Luca"
 
-cats = ["caramelo", "docinho", "chiclete",  "abacate"]
+puts "Hello #{name}"
 
-for cat in cats
-    puts cat.upcase
-end
+#convert to string
 
-cats.each do |cat|
-    puts cat
-end
-=end
+5.to_s
+true.to_s
+:symbol.to_s
 
-=begin
-File.open("teste.txt", "a") do |file|
-    file.write("\neu sou a terceira linha")
-end
-=end
+#Symbols are stored in memory only once
+:my_symbol
+:another_symbol
 
-#errors
-=begin
-begin
-    num = 10/0
-rescue => e
-    puts e
-end
+#Booleans
 
-num = 10/0
-=end
-class Book
-    attr_accessor :title, :author, :pages
-    def initialize(title, author, pages)
-        @title = title
-        @author = author
-        @pages = pages
-    end
+true
+false
+nil #nil represents nothing, when something don't have any return it will return nil. treated as false in conditional logic but false == nil it's false.
 
-    def check_pages
-        if @pages <= 200 
-        return "livro curto"
-        end
-        return "livro grande"
-    end
-end
+a = puts "stuff"
+puts a
 
-#Uma classe é a criação de uma representação de alguma coisa existente, é um tipo de dado que nós mesmos criamos. Eu criei a classe Book e instanciei meus livros (criei um objeto)
-book1 = Book.new("Capitães de Areia","Jorge Amado", 300)
-puts book1.title
-puts book1.author 
-puts book1.pages
-book2 = Book.new("Claro Enigma","Carlos Drummond", 200)
+#Exercises
 
-puts book1.check_pages
-puts book2.check_pages
+#1 Add two strings together that, when concatenated, return your first and last name as your full name in one string.
+
+puts "Luca" + " Clemente"
+
+#2 Write a program that uses a hash to store a list of movie titles with the year they came out. Then use the puts command to make your program print out the year of each movie to the screen. 
+
+movies ={
+    :Arremesando_alto => 2022,
+    :As_vantagens_de_ser_invisivel => 2012,
+    :Arthur_e_os_minimoys => 2006
+ }
+
+ puts movies[:Arremesando_alto]
+ puts movies[:As_vantagens_de_ser_invisivel]
+ puts movies[:Arthur_e_os_minimoys]
+
+ 
+ listOfMoviedates = [2022,2019]
+
+ listOfMoviedates.push(movies[:As_vantagens_de_ser_invisivel])
+ listOfMoviedates.push(movies[:Arthur_e_os_minimoys])
+ listOfMoviedates.push(movies[:Arremesando_alto])
+
+ puts listOfMoviedates
+
+ 
