@@ -80,4 +80,85 @@ movies ={
 
  puts listOfMoviedates
 
+
+ #Variables are stored in the memmory
+
+ age = 21
+ name = "Luca"
+ can_sing = false
+
+#Scope
  
+#method scope -> nao acessam variaveis fora do escopo e tambem nao podem ser acessadas fora do escopo do metodo.
+
+name = 'Somebody Else'
+
+def print_full_name(first_name, last_name)
+  name = first_name + ' ' + last_name
+  puts name
+end
+
+print_full_name 'Peter', 'Henry'   # prints Peter Henry
+print_full_name 'Lynn', 'Blake'    # prints Lynn Blake
+print_full_name 'Kim', 'Johansson' # prints Kim Johansson
+puts name                          # prints Somebody Else
+
+
+#block scope -> Basicamente as variaveis de dentro do bloco podem acessar as variaveis externas mas nao vice-versa.
+
+#Exercises
+
+#1 Write a program that asks the user to type in their name and then prints out a greeting message with their name included.
+
+puts "What's your name?"
+name = gets.chomp
+puts "Welcome #{name}"
+
+#2 Write a program that asks a user how old they are and then tells them how old they will be in 10, 20, 30 and 40 years. Below is the output for someone 20 years old.
+
+puts "How old are you?"
+
+user_age = gets.chomp.to_i 
+
+my_age_in_ten_years = user_age + 10
+my_age_in_twenty_years = user_age + 20
+my_age_in_thirty_years = user_age + 30
+my_age_in_forty_years = user_age + 40
+
+puts "In ten years you will be:"
+puts my_age_in_ten_years
+puts "In twenty years you will be:"
+puts my_age_in_twenty_years
+puts "In thirty years you will be:"
+puts my_age_in_thirty_years
+puts "In forty years you will be:"
+puts my_age_in_forty_years
+
+#3 Prints the name of the user 10 times. You must do this without explicitly writing the puts method 10 times in a row. Hint: you can use the times method to do something repeatedly.
+
+10.times {puts "#{name}"}
+
+#4 First asks the user for their first name, saves it into a variable, and then does the same for the last name. Then outputs their full name all at once.
+
+puts "What's your first name?"
+first_name = gets.chomp
+puts "What's your last name?"
+last_name = gets.chomp
+
+puts "#{first_name} #{last_name}"
+
+#5 Look at the following programs...
+
+
+#and...
+
+y = 0
+3.times do
+  y += 1
+  x = y
+end
+puts x
+
+#What does x print to the screen in each case? Do they both give errors? Are the errors different? Why?
+
+#first case - 3, second case - error. Only one give errors. 
