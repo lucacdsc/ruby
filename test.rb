@@ -162,3 +162,4 @@ puts x
 #What does x print to the screen in each case? Do they both give errors? Are the errors different? Why?
 
 #first case - 3, second case - error. Only one give errors. 
+
